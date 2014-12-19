@@ -121,7 +121,16 @@ And you get something like this:
 
 ![Resulting breadcrumbs example](https://raw.githubusercontent.com/kirelagin/django-headcrumbs/gh-pages/bar.png)
 
+### localized Crumbs ###
+If you want to localize your crumbs you can use ugettext_lazy
+```python
+from headcrumbs.decorators import crumb
+from headcrumbs.util import name_from_pk
+from django.utils.translation import ugettext_lazy as _
 
+@crumb(_('Stuff')) # stuff will be localized
+def index(request):
+```
 Appendix A. About the name
 ---------------------------
 
